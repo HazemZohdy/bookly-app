@@ -21,14 +21,15 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
-    initAnimation();
+    initializeAnimation();
     navigateToHome();
   }
 
-
+  
 
   @override
   void dispose() {
+    // TODO: implement dispose
     super.dispose();
     animationController.dispose();
   }
@@ -41,15 +42,15 @@ class _SplashViewBodyState extends State<SplashViewBody>
       children: [
         Image.asset(AssetsData.logo),
         const SizedBox(height: 8),
-        SlidingText(slidingAnimation: slidingAnimation),
+        slidingText(slidingAnimation: slidingAnimation),
       ],
     );
   }
 
-  void initAnimation() {
+  void initializeAnimation() {
     animationController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 5),
+      duration: const Duration(seconds: 2),
     );
     slidingAnimation =
         Tween<Offset>(begin: const Offset(0, 5), end: Offset.zero)
@@ -57,12 +58,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
     animationController.forward();
   }
 
-
-    void navigateToHome() {
-     Future.delayed(const Duration(seconds: 5), () {
+  void navigateToHome() {
+      Future.delayed(const Duration(seconds: 2), () {
       Get.to(
         () => const HomeView(),
-        transition: Transition.fade,
+        transition: Transition.fadeIn,
       );
     });
   }
