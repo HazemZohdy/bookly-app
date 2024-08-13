@@ -1,8 +1,7 @@
- 
-import 'package:flutter/material.dart';
+ import 'package:flutter/widgets.dart';
 
-class slidingText extends StatelessWidget {
-  const slidingText({
+class SlidingText extends StatelessWidget {
+  const SlidingText({
     super.key,
     required this.slidingAnimation,
   });
@@ -13,7 +12,7 @@ class slidingText extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: slidingAnimation,
-      builder: (context,_) {
+      builder: (context, _) {
         return SlideTransition(
           position: slidingAnimation,
           child: const Text(
