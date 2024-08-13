@@ -10,8 +10,8 @@ class CustomListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8),
-            child: CustomListViewItem(),
+            padding:   EdgeInsets.symmetric(horizontal: 10),
+            child:   CustomListViewItem(),
           );
         });
   }
