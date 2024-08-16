@@ -9,13 +9,14 @@ class CustomListView extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height * .3,
       child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-            return const Padding(
-              padding:   EdgeInsets.symmetric(horizontal: 10),
-              child:   CustomListViewItem(),
-            );
-          }),
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          return const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8),
+            child: CustomListViewItem(),
+          );
+        },
+      ),
     );
   }
 }

@@ -1,4 +1,5 @@
- import 'package:flutter/widgets.dart';
+import 'package:booklyapp/core/utils/styles.dart';
+import 'package:flutter/material.dart';
 
 class SlidingText extends StatelessWidget {
   const SlidingText({
@@ -11,20 +12,16 @@ class SlidingText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      animation: slidingAnimation,
-      builder: (context, _) {
-        return SlideTransition(
-          position: slidingAnimation,
-          child: const Text(
-            'Read Books Free',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+        animation: slidingAnimation,
+        builder: (context, _) {
+          return SlideTransition(
+            position: slidingAnimation,
+            child: const Text(
+              'Read Books Free',
+              textAlign: TextAlign.center,
+              style: Styles.textStyle18,
             ),
-          ),
-        );
-      }
-    );
+          );
+        });
   }
 }

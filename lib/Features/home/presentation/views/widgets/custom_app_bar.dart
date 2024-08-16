@@ -15,7 +15,7 @@ class CustomAppBar extends StatelessWidget {
         children: [
           Image.asset(
             AssetsData.logo,
-            height: 35,
+            height: 30,
           ),
           const Spacer(),
           IconButton(
@@ -24,7 +24,7 @@ class CustomAppBar extends StatelessWidget {
               FontAwesomeIcons.magnifyingGlass,
               size: 28,
             ),
-          ),
+          )
         ],
       ),
     );
