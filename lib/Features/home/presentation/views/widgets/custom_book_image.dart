@@ -21,19 +21,6 @@ class CustomBookImage extends StatelessWidget {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import 'package:flutter/material.dart';
 
 // class CustomListViewItem extends StatelessWidget {

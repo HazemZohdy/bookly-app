@@ -25,6 +25,4 @@ class CustomTextFeildSearch extends StatelessWidget {
       ),
     );
   }
-
-  
 }

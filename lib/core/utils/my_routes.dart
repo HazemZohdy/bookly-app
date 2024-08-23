@@ -6,8 +6,8 @@ import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
   static const kHomeView = '/HomeView';
-    static const kBookDetailsView = '/BookDetailsView';
-      static const kSearchView = '/SearchView';
+  static const kBookDetailsView = '/BookDetailsView';
+  static const kSearchView = '/SearchView';
 // GoRouter configuration
   static final router = GoRouter(
     routes: [
@@ -15,15 +15,15 @@ abstract class AppRouter {
         path: '/',
         builder: (context, state) => const SplashView(),
       ),
-       GoRoute(
-        path:kSearchView,
+      GoRoute(
+        path: kSearchView,
         builder: (context, state) => const SearchView(),
       ),
       GoRoute(
         path: kHomeView,
         builder: (context, state) => const HomeView(),
       ),
-       GoRoute(
+      GoRoute(
         path: kBookDetailsView,
         builder: (context, state) => const BookDetailsView(),
       ),
