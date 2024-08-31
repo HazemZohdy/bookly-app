@@ -1,5 +1,4 @@
-import 'package:booklyapp/Features/home/presentation/views/widgets/cusotm_bookly_rating.dart'
-    show CustomBooklyRating;
+import 'package:booklyapp/Features/home/presentation/views/widgets/cusotm_bookly_rating.dart';
 import 'package:booklyapp/constants.dart';
 import 'package:booklyapp/core/utils/my_routes.dart';
 import 'package:booklyapp/core/utils/styles.dart';
