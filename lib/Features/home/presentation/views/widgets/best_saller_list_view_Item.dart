@@ -1,4 +1,6 @@
+import 'package:booklyapp/Features/home/data/models/book_model/book_model.dart';
 import 'package:booklyapp/Features/home/presentation/views/widgets/cusotm_bookly_rating.dart';
+import 'package:booklyapp/Features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:booklyapp/constants.dart';
 import 'package:booklyapp/core/utils/my_routes.dart';
 import 'package:booklyapp/core/utils/styles.dart';
@@ -7,9 +9,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
-class BestSallerListViewItem extends StatelessWidget {
-  const BestSallerListViewItem({super.key});
-
+class BookListViewItem extends StatelessWidget {
+  const BookListViewItem({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -20,19 +22,8 @@ class BestSallerListViewItem extends StatelessWidget {
         height: 120,
         child: Row(
           children: [
-            AspectRatio(
-              aspectRatio: 2.5 / 3.2,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  image: const DecorationImage(
-                    fit: BoxFit.fill,
-                    image: NetworkImage(
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjW6vb9jwCUEnqdLlH6MH4KEAeCw6sLBpxpA&s'),
-                  ),
-                ),
-              ),
-            ),
+            CustomBookImage(
+                imageUrl: bookModel.volumeInfo.imageLinks.thumbnail),
             const SizedBox(
               width: 25,
             ),
@@ -43,7 +34,7 @@ class BestSallerListViewItem extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * .5,
                     child: Text(
-                      'Harry Butter and the Goblet of fire',
+                      bookModel.volumeInfo.title!,
                       style: Styles.textStyle20.copyWith(fontFamily: kGtSectra),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
@@ -52,8 +43,8 @@ class BestSallerListViewItem extends StatelessWidget {
                   const SizedBox(
                     height: 4,
                   ),
-                  const Text(
-                    'G.K Rawling',
+                  Text(
+                    bookModel.volumeInfo.authors![0],
                     style: Styles.textStyle14,
                   ),
                   const SizedBox(
@@ -62,13 +53,15 @@ class BestSallerListViewItem extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        '19.9 \$',
+                        'For Free',
                         style: Styles.textStyle20.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       const Spacer(),
-                      const CustomBooklyRating(),
+                        CustomBooklyRating(
+                        count: bookModel.volumeInfo.pageCount!,
+                      ),
                     ],
                   ),
                 ],
